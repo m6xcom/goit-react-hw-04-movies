@@ -1,0 +1,11 @@
+.form {
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.inputField {
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 15px;
+}

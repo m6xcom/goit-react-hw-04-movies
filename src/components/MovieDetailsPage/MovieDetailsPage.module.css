@@ -1,0 +1,27 @@
+.detailsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0px 10px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.details {
+  width: 50%;
+  margin-left: 30px;
+}
+
+.movieTitle {
+  height: fit-content;
+}
+
+.genresList {
+  display: flex;
+  list-style: none;
+  padding-left: 0px;
+}
+.genresList > li:not(:first-child) {
+  margin-left: 10px;
+}
+.additionalInfo {
+  box-shadow: 0px 10px 8px 0px rgba(34, 60, 80, 0.2);
+  padding-bottom: 10px;
+}

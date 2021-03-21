@@ -18,7 +18,6 @@ const Navigation = () => {
         </li>
         <li>
           <NavLink
-            exact
             to="/movies"
             className={style.navLink}
             activeClassName={style.activeLink}

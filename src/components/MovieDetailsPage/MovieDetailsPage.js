@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link, Switch, Route } from "react-router-dom";
 import requests from "../../services/movieRequest";
+import routes from "../../services/routes";
 import Cast from "../Cast/Cast";
 import Reviews from "../Reviews/Reviews";
 import style from "./MovieDetailsPage.module.css";
@@ -44,6 +45,7 @@ class MovieDetailsPage extends Component {
     if (location.state && location.state.from) {
       return history.replace(location.state.from);
     }
+    return history.push("/");
   };
   render() {
     return (
@@ -80,7 +82,7 @@ class MovieDetailsPage extends Component {
             <li>
               <Link
                 to={{
-                  pathname: `/movies/${this.props.match.params.movieId}/cast`,
+                  pathname: `${routes.moviesPage}/${this.props.match.params.movieId}/cast`,
                   state: {
                     from:
                       this.props.location.state &&
@@ -95,7 +97,7 @@ class MovieDetailsPage extends Component {
             <li>
               <Link
                 to={{
-                  pathname: `/movies/${this.props.match.params.movieId}/reviews`,
+                  pathname: `${routes.moviesPage}/${this.props.match.params.movieId}/reviews`,
                   state: {
                     from:
                       this.props.location.state &&

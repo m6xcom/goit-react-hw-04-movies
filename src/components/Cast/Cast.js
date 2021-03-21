@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import style from "./Cast.module.css";
 
 const Cast = ({ cast }) => {
@@ -21,3 +22,7 @@ const Cast = ({ cast }) => {
 };
 
 export default Cast;
+
+Cast.propTypes = {
+  cast: PropTypes.arrayOf(PropTypes.object),
+};

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import style from "./Reviews.module.css";
 
 const Reviews = ({ reviews }) => {
@@ -15,3 +16,7 @@ const Reviews = ({ reviews }) => {
 };
 
 export default Reviews;
+
+Reviews.propTypes = {
+  reviews: PropTypes.arrayOf(PropTypes.object),
+};

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import MoviesList from "../MoviesList/MoviesList";
-import requests from "../../services/movieRequest";
+import MoviesList from "../../MoviesList/MoviesList";
+import requests from "../../../services/movieRequest";
 import style from "./HomePage.module.css";
 
 const { getTrendingMovies } = requests;

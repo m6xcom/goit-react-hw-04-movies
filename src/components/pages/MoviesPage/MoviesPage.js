@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import requests from "../../services/movieRequest";
-import MoviesList from "../MoviesList/MoviesList";
+import requests from "../../../services/movieRequest";
+import MoviesList from "../../MoviesList/MoviesList";
 import style from "./MoviesPage.module.css";
 
 const { searchMovie } = requests;

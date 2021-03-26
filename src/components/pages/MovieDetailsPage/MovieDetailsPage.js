@@ -1,10 +1,15 @@
-import React, { Component } from "react";
+import React, { Component, Suspense, lazy } from "react";
 import { Link, Switch, Route } from "react-router-dom";
-import requests from "../../services/movieRequest";
-import routes from "../../services/routes";
-import Cast from "../Cast/Cast";
-import Reviews from "../Reviews/Reviews";
+import requests from "../../../services/movieRequest";
+import routes from "../../../services/routes";
 import style from "./MovieDetailsPage.module.css";
+
+const Cast = lazy(() =>
+  import("../../Cast/Cast" /* webpackChunkName: "cast" */)
+);
+const Reviews = lazy(() =>
+  import("../../Reviews/Reviews" /* webpackChunkName: "reviews" */)
+);
 
 const { getMovieDetails, getMovieCast, getMovieReviews } = requests;
 
@@ -111,26 +116,30 @@ class MovieDetailsPage extends Component {
             </li>
           </ul>
           <Switch>
-            {this.state.cast.length > 0 && (
-              <Route
-                exact
-                path={`${this.props.match.url}/cast`}
-                render={() => <Cast cast={this.state.cast} />}
-              />
-            )}
-            {this.state.reviews.length > 0 ? (
-              <Route
-                exact
-                path={`${this.props.match.url}/reviews`}
-                render={() => <Reviews reviews={this.state.reviews} />}
-              />
-            ) : (
-              <Route
-                exact
-                path={`${this.props.match.url}/reviews`}
-                render={() => <h3>We don't have any reviews for this movie</h3>}
-              />
-            )}
+            <Suspense fallback={<div>Loading...</div>}>
+              {this.state.cast.length > 0 && (
+                <Route
+                  exact
+                  path={`${this.props.match.url}/cast`}
+                  render={() => <Cast cast={this.state.cast} />}
+                />
+              )}
+              {this.state.reviews.length > 0 ? (
+                <Route
+                  exact
+                  path={`${this.props.match.url}/reviews`}
+                  render={() => <Reviews reviews={this.state.reviews} />}
+                />
+              ) : (
+                <Route
+                  exact
+                  path={`${this.props.match.url}/reviews`}
+                  render={() => (
+                    <h3>We don't have any reviews for this movie</h3>
+                  )}
+                />
+              )}
+            </Suspense>
           </Switch>
         </div>
       </div>

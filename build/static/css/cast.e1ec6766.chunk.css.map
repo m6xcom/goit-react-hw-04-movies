@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/Cast/Cast.module.css"],"names":[],"mappings":"AAAA,mBACE,WAAY,CACZ,WACF","file":"cast.e1ec6766.chunk.css","sourcesContent":[".actor {\r\n  width: 100px;\r\n  height: auto;\r\n}\r\n"]}

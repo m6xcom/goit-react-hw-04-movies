@@ -5,15 +5,15 @@ import AppBar from "../AppBar/AppBar";
 import "./App.css";
 
 const HomePage = lazy(() =>
-  import("../HomePage/HomePage" /* webpackChunkName: "home-page" */)
+  import("../pages/HomePage/HomePage" /* webpackChunkName: "home-page" */)
 );
 const MovieDetailsPage = lazy(() =>
   import(
-    "../MovieDetailsPage/MovieDetailsPage" /* webpackChunkName: "movie-details-page" */
+    "../pages/MovieDetailsPage/MovieDetailsPage" /* webpackChunkName: "movie-details-page" */
   )
 );
 const MoviesPage = lazy(() =>
-  import("../MoviesPage/MoviesPage" /* webpackChunkName: "movies-page" */)
+  import("../pages/MoviesPage/MoviesPage" /* webpackChunkName: "movies-page" */)
 );
 
 const App = () => {
